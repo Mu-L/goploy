@@ -166,10 +166,12 @@ function getList() {
       const routerObj: any = {}
       for (const father of store.state.permission.routes) {
         try {
-          for (const children of father.children) {
-            routerObj[father.path + '/' + children.path] = t(
-              'route.' + children.meta.title
-            )
+          for (const children of father.children || []) {
+            if (children.meta) {
+              routerObj[father.path + '/' + children.path] = t(
+                'route.' + children.meta.title
+              )
+            }
           }
         } catch (error) {
           console.log(error)

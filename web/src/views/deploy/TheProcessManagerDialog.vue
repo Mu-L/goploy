@@ -49,11 +49,15 @@
       <el-button type="primary" :icon="Plus" @click="handleAdd" />
     </el-row>
     <el-row v-if="pinedProcessOption.length > 0">
-      <el-radio-group v-model="pinProjectProcessId" size="small" @change="(id) => handlePinProcessChange(id)">
+      <el-radio-group
+        v-model="pinProjectProcessId"
+        size="small"
+        @change="(id) => handlePinProcessChange(id)"
+      >
         <el-radio 
           v-for="item in pinedProcessOption"
           :key="item.id"
-          style="margin-right: 10px;margin-top: 10px;"
+          style="margin-right: 10px; margin-top: 10px"
           :value="item.id"
           :label="item.id"
           border
@@ -442,9 +446,9 @@ function submit() {
       } else {
         edit()
       }
-      return Promise.resolve(true)
+      return Promise.resolve()
     } else {
-      return Promise.reject(false)
+      return Promise.reject()
     }
   })
 }

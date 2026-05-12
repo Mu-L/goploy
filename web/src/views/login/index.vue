@@ -397,9 +397,9 @@ function handleLogin() {
           }
           loading.value = false
         })
-      return Promise.resolve(true)
+      return Promise.resolve()
     } else {
-      return Promise.reject(false)
+      return Promise.reject()
     }
   })
 }

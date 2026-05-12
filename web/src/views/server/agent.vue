@@ -576,9 +576,9 @@ function submit() {
       } else {
         edit()
       }
-      return Promise.resolve(true)
+      return Promise.resolve()
     } else {
-      return Promise.reject(false)
+      return Promise.reject()
     }
   })
 }

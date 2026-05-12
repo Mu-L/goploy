@@ -15,10 +15,9 @@
       >
         <el-row>
           <el-popover
-            v-model:visible="filterInpurtVisible"
+            :visible="filterInpurtVisible"
             placement="bottom-start"
             width="318"
-            trigger="manual"
           >
             <el-row type="flex" justify="space-between" align="middle">
               <span style="font-size: 16px">Filter</span>

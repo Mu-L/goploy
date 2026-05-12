@@ -785,9 +785,9 @@ function check() {
           formProps.value.loading = false
           formProps.value.disabled = false
         })
-      return Promise.resolve(true)
+      return Promise.resolve()
     } else {
-      return Promise.reject(false)
+      return Promise.reject()
     }
   })
 }
@@ -803,9 +803,9 @@ function submit() {
       } else {
         edit()
       }
-      return Promise.resolve(true)
+      return Promise.resolve()
     } else {
-      return Promise.reject(false)
+      return Promise.reject()
     }
   })
 }
@@ -858,9 +858,9 @@ function installAgent() {
         .finally(() => {
           agentFormProps.value.disabled = false
         })
-      return Promise.resolve(true)
+      return Promise.resolve()
     } else {
-      return Promise.reject(false)
+      return Promise.reject()
     }
   })
 }

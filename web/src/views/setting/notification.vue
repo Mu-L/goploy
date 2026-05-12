@@ -148,9 +148,9 @@ function submit() {
   form.value?.validate((valid) => {
     if (valid) {
       edit()
-      return Promise.resolve(true)
+      return Promise.resolve()
     } else {
-      return Promise.reject(false)
+      return Promise.reject()
     }
   })
 }
