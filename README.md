@@ -42,6 +42,8 @@ Complete installation instructions, no difficulty in getting started!
 
 [Goploy-Jetbrains](https://github.com/goploy-devops/goploy-jetbrains) Search Goploy in Jetbrains
 
+[Goploy-CLI](https://github.com/goploy-devops/goploy-cli) CLI & MCP server for AI agent deployment
+
 [Jetbrains](https://www.jetbrains.com/?from=zhenorzz/goploy) Supports this project with GoLand licenses. We appreciate their support for free and open source software!
 
 ## Content

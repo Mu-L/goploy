@@ -42,6 +42,8 @@
 
 [Goploy-Jetbrains](https://github.com/goploy-devops/goploy-jetbrains) 在Jetbrains插件市场搜索Goploy
 
+[Goploy-CLI](https://github.com/goploy-devops/goploy-cli) CLI & MCP 服务端，支持 AI agent 部署
+
 ## 内容列表
 
 - [功能](#功能)

@@ -180,6 +180,8 @@ go test -cover ./...
 | `GOPLOY_API_KEY` | API 认证密钥 |
 | `GOPLOY_NAMESPACE_ID` | 命名空间 ID (默认 1) |
 
+> 以上环境变量由独立客户端 [`goploy-cli`](https://github.com/goploy-devops/goploy-cli) 使用，用于 CLI / MCP agent 对接。
+
 ## Version Management
 
 版本号在以下位置同步维护:
