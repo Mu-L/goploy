@@ -146,7 +146,7 @@
             <el-checkbox
               v-for="child in item.children"
               :key="child.id"
-              :label="child.id"
+              :value="child.id"
             >
               {{ $t(`rolePermission.${child.name}`) }}
             </el-checkbox>

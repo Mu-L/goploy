@@ -151,7 +151,7 @@
                   style="padding: 5px 16px"
                   :href="previewHref"
                   target="_blank"
-                  :underline="false"
+                  underline="never"
                   :permissions="[permission.SFTPPreviewFile]"
                 >
                   {{ $t('preview') }}
@@ -172,7 +172,7 @@
                   style="padding: 5px 16px"
                   :href="downloadHref"
                   target="_blank"
-                  :underline="false"
+                  underline="never"
                   :permissions="[permission.SFTPDownloadFile]"
                 >
                   {{ $t('download') }}

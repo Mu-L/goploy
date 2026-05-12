@@ -10,6 +10,7 @@
             multiple
             filterable
             clearable
+            style="width: 240px"
             @change="serverChange"
           >
             <el-option :value="0" label="Select all" />
@@ -32,6 +33,7 @@
         <el-row align="middle">
           <el-select
             v-model="templateName"
+            style="width: 240px"
             filterable
             clearable
             @change="selectTemplate"

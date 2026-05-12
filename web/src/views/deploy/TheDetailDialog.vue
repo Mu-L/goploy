@@ -156,7 +156,7 @@
             :key="index"
             style="margin: 5px 0; width: 100%"
           >
-            <el-radio class="publish-commit" :label="item.token" border>
+            <el-radio class="publish-commit" :value="item.token" border>
               <el-row>
                 <span class="publish-name">{{ item.publisherName }}</span>
                 <span class="publish-commitID" :title="item['commit']">

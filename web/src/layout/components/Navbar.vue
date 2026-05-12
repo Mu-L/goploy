@@ -100,7 +100,7 @@
                   </el-dropdown-item>
                 </router-link>
                 <el-link
-                  :underline="false"
+                  underline="never"
                   href="https://docs.goploy.icu/"
                   target="__blank"
                 >

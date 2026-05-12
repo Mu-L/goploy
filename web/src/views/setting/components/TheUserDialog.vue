@@ -38,6 +38,7 @@
               :loading="userLoading"
               multiple
               clearable
+              style="width: 200px"
               filterable
             >
               <el-option
@@ -62,6 +63,7 @@
             <el-select
               v-model="formData.roleId"
               :loading="roleLoading"
+              style="width: 200px"
               filterable
             >
               <el-option

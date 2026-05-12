@@ -113,14 +113,14 @@
             <el-button
               v-if="scope.row.isDir"
               style="margin-right: 10px"
-              type="text"
+              link
               :icon="Right"
               @click="handleSelectPath(filePath + scope.row.name + '/')"
             />
             <el-button
               v-else
               style="margin-right: 10px"
-              type="text"
+              link
               :icon="Check"
               @click="handleSelectFile(filePath + scope.row.name)"
             />

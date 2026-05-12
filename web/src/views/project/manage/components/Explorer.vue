@@ -124,7 +124,7 @@
                   style="padding: 5px 16px"
                   :href="previewHref"
                   target="_blank"
-                  :underline="false"
+                  underline="never"
                 >
                   {{ $t('preview') }}
                 </el-link>
@@ -137,7 +137,7 @@
                   style="padding: 5px 16px"
                   :href="downloadHref"
                   target="_blank"
-                  :underline="false"
+                  underline="never"
                 >
                   {{ $t('download') }}
                 </el-link>

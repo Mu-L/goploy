@@ -186,16 +186,16 @@
           ]"
         >
           <el-radio-group v-model="formData.namespaceId">
-            <el-radio :label="getNamespace()['id']">
+            <el-radio :value="getNamespace()['id']">
               {{ $t('current') }}
             </el-radio>
-            <el-radio :label="0">{{ $t('unlimited') }}</el-radio>
+            <el-radio :value="0">{{ $t('unlimited') }}</el-radio>
           </el-radio-group>
         </el-form-item>
         <el-form-item label="OS">
           <el-radio-group v-model="formData.os">
-            <el-radio label="linux">linux</el-radio>
-            <el-radio label="windows">windows</el-radio>
+            <el-radio value="linux">linux</el-radio>
+            <el-radio value="windows">windows</el-radio>
           </el-radio-group>
         </el-form-item>
         <el-form-item
@@ -235,8 +235,8 @@
             v-model="formProps.loginType"
             @change="formData.path = ''"
           >
-            <el-radio label="key">key</el-radio>
-            <el-radio label="user">user</el-radio>
+            <el-radio value="key">key</el-radio>
+            <el-radio value="user">user</el-radio>
           </el-radio-group>
         </el-form-item>
         <el-form-item
@@ -327,8 +327,8 @@
               v-model="formProps.jumpLoginType"
               @change="formData.jumpPath = ''"
             >
-              <el-radio label="key">key</el-radio>
-              <el-radio label="user">user</el-radio>
+              <el-radio value="key">key</el-radio>
+              <el-radio value="user">user</el-radio>
             </el-radio-group>
           </el-form-item>
           <el-form-item :label="$t('owner')">
@@ -405,8 +405,8 @@
           <el-input v-model="agentFormData.installPath" autocomplete="off" />
         </el-form-item>
         <el-form-item label="Use" prop="tool">
-          <el-radio v-model="agentFormData.tool" label="wget">wget</el-radio>
-          <el-radio v-model="agentFormData.tool" label="curl">curl</el-radio>
+          <el-radio v-model="agentFormData.tool" value="wget">wget</el-radio>
+          <el-radio v-model="agentFormData.tool" value="curl">curl</el-radio>
         </el-form-item>
         <el-form-item
           label="Report URL"
@@ -418,8 +418,8 @@
           <el-input v-model="agentFormData.reportURL" autocomplete="off" />
         </el-form-item>
         <el-form-item label="Turn on web" prop="webState">
-          <el-radio v-model="agentFormData.webState" :label="1"> Yes </el-radio>
-          <el-radio v-model="agentFormData.webState" :label="0"> No </el-radio>
+          <el-radio v-model="agentFormData.webState" :value="1"> Yes </el-radio>
+          <el-radio v-model="agentFormData.webState" :value="0"> No </el-radio>
         </el-form-item>
         <el-form-item
           v-show="agentFormData.webState === 1"

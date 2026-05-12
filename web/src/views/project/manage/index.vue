@@ -328,30 +328,30 @@
               prop="transferType"
             >
               <el-radio-group v-model="formData.transferType">
-                <el-radio :label="'rsync'">
+                <el-radio value="rsync">
                   rsync
                   <el-link
-                    :underline="false"
+                    underline="never"
                     :href="$t('projectPage.rsyncDoc')"
                     target="_blank"
                     :icon="QuestionFilled"
                     style="color: #666"
                   />
                 </el-radio>
-                <el-radio :label="'sftp'">
+                <el-radio value="sftp">
                   sftp
                   <el-link
-                    :underline="false"
+                    underline="never"
                     :href="$t('projectPage.sftpDoc')"
                     target="_blank"
                     :icon="QuestionFilled"
                     style="color: #666"
                   />
                 </el-radio>
-                <el-radio :label="'custom'">
+                <el-radio value="custom">
                   custom
                   <el-link
-                    :underline="false"
+                    underline="never"
                     :href="$t('projectPage.customDoc')"
                     target="_blank"
                     :icon="QuestionFilled"
@@ -404,8 +404,8 @@
                 v-model="formData.deployServerMode"
                 style="margin-bottom: 5px"
               >
-                <el-radio label="parallel">{{ $t('parallel') }}</el-radio>
-                <el-radio label="serial">{{ $t('serial') }}</el-radio>
+                <el-radio value="parallel">{{ $t('parallel') }}</el-radio>
+                <el-radio value="serial">{{ $t('serial') }}</el-radio>
               </el-radio-group>
               <el-select
                 v-model="formData.serverIds"
@@ -468,8 +468,8 @@
             </template>
             <el-form-item label="" label-width="10px">
               <el-radio-group v-model="formData.review">
-                <el-radio :label="0">{{ $t('close') }}</el-radio>
-                <el-radio :label="1">{{ $t('open') }}</el-radio>
+                <el-radio :value="0">{{ $t('close') }}</el-radio>
+                <el-radio :value="1">{{ $t('open') }}</el-radio>
               </el-radio-group>
             </el-form-item>
             <el-form-item
@@ -492,7 +492,7 @@
                 <el-checkbox
                   v-for="(item, key) in formProps.reviewURLParamOption"
                   :key="key"
-                  :label="item.value"
+                  :value="item.value"
                   :disabled="item['disabled']"
                 >
                   {{ item.label }}
@@ -520,8 +520,8 @@
                 v-model="formProps.symlink"
                 @change="handleSymlink"
               >
-                <el-radio :label="false">{{ $t('close') }}</el-radio>
-                <el-radio :label="true">
+                <el-radio :value="false">{{ $t('close') }}</el-radio>
+                <el-radio :value="true">
                   {{ $t('open') }}
                 </el-radio>
               </el-radio-group>
@@ -1203,8 +1203,8 @@
           v-model="autoDeployFormData.autoDeploy"
           style="margin: 10px"
         >
-          <el-radio :label="0">{{ $t('close') }}</el-radio>
-          <el-radio :label="1">webhook</el-radio>
+          <el-radio :value="0">{{ $t('close') }}</el-radio>
+          <el-radio :value="1">webhook</el-radio>
         </el-radio-group>
         <el-row
           v-show="autoDeployFormData.autoDeploy === 1"

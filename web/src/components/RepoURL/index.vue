@@ -2,7 +2,7 @@
   <el-link
     v-if="href"
     type="primary"
-    :underline="false"
+    underline="never"
     :href="href"
     target="_blank"
   >

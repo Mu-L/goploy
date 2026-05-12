@@ -130,8 +130,8 @@
           prop="superManager"
         >
           <el-radio-group v-model="formData.superManager">
-            <el-radio :label="1">{{ $t('boolOption[1]') }}</el-radio>
-            <el-radio :label="0">{{ $t('boolOption[0]') }}</el-radio>
+            <el-radio :value="1">{{ $t('boolOption[1]') }}</el-radio>
+            <el-radio :value="0">{{ $t('boolOption[0]') }}</el-radio>
           </el-radio-group>
           <el-popover
             placement="top-start"
@@ -142,7 +142,7 @@
             {{ $t('memberPage.permissionDesc') }}
             <template #reference>
               <el-button
-                type="text"
+                link
                 :icon="QuestionFilled"
                 style="margin-left: 10px; color: #666"
               />

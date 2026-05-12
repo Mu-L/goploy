@@ -398,12 +398,12 @@ function transferFile() {
 </style>
 <style lang="scss">
 .tabs-plus {
-  .el-input__wrapper {
+  .el-select__wrapper {
     border-radius: 0px !important;
     box-shadow: none;
   }
-  .el-input__inner {
-    height: 43px !important;
+  .el-select__wrapper {
+    height: 44px !important;
   }
 }
 </style>

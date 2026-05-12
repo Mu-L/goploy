@@ -54,7 +54,7 @@
         <template #label>
           Api Key
           <el-link
-            :underline="false"
+            underline="never"
             href="//api-docs.goploy.icu"
             target="_blank"
             :icon="QuestionFilled"

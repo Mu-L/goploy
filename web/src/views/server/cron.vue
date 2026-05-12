@@ -157,15 +157,15 @@
         </el-form-item>
         <el-form-item label="Single mode">
           <el-radio-group v-model="formData.singleMode">
-            <el-radio :label="0">no</el-radio>
-            <el-radio :label="1">yes</el-radio>
+            <el-radio :value="0">no</el-radio>
+            <el-radio :value="1">yes</el-radio>
           </el-radio-group>
         </el-form-item>
         <el-form-item label="Log level">
           <el-radio-group v-model="formData.logLevel">
-            <el-radio :label="0">none</el-radio>
-            <el-radio :label="1">stdout</el-radio>
-            <el-radio :label="2">stdout+stderr</el-radio>
+            <el-radio :value="0">none</el-radio>
+            <el-radio :value="1">stdout</el-radio>
+            <el-radio :value="2">stdout+stderr</el-radio>
           </el-radio-group>
         </el-form-item>
         <el-form-item :label="$t('description')" prop="description">

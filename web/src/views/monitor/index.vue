@@ -288,7 +288,7 @@
                   lang="sh"
                   :theme="isDark ? 'one_dark' : 'github'"
                   style="height: 360px; width: 100%"
-                  :options="{ newLineMode: 'unix' }"
+                  :options="shellEditorOptions"
                 />
               </el-form-item>
             </template>
@@ -329,11 +329,11 @@
               ]"
             >
               <el-radio-group v-model="formData.times">
-                <el-radio :label="1">1</el-radio>
-                <el-radio :label="2">2</el-radio>
-                <el-radio :label="3">3</el-radio>
-                <el-radio :label="4">4</el-radio>
-                <el-radio :label="5">5</el-radio>
+                <el-radio :value="1">1</el-radio>
+                <el-radio :value="2">2</el-radio>
+                <el-radio :value="3">3</el-radio>
+                <el-radio :value="4">4</el-radio>
+                <el-radio :value="5">5</el-radio>
               </el-radio-group>
             </el-form-item>
             <el-form-item :label="$t('monitorPage.silentCycle')">
@@ -431,7 +431,7 @@
                 lang="sh"
                 :theme="isDark ? 'one_dark' : 'github'"
                 style="height: 360px; width: 100%"
-                :options="{ newLineMode: 'unix' }"
+                :options="shellEditorOptions"
               />
             </el-form-item>
           </el-tab-pane>
@@ -478,7 +478,7 @@
                 lang="sh"
                 :theme="isDark ? 'one_dark' : 'github'"
                 style="height: 360px; width: 100%"
-                :options="{ newLineMode: 'unix' }"
+                :options="shellEditorOptions"
               />
             </el-form-item>
           </el-tab-pane>
@@ -574,6 +574,7 @@ const tempFormData = {
 }
 
 const isDark = useDark()
+const shellEditorOptions = Object.freeze({ newLineMode: 'unix' })
 const formData = ref(tempFormData)
 const formProps = ref({
   loading: false,

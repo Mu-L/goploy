@@ -3,6 +3,8 @@ declare module 'path-browserify' {
   export default path
 }
 
+declare module 'virtual:svg-icons-register'
+
 declare module 'virtual:svg-icons-names' {
   const svgIds: string[]
   export default svgIds

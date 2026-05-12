@@ -2,7 +2,7 @@ import { defineConfig, loadEnv, ConfigEnv, UserConfigExport } from 'vite'
 import path from 'path'
 import vue from '@vitejs/plugin-vue'
 import vueI18n from '@intlify/vite-plugin-vue-i18n'
-import viteSvgIcons from 'vite-plugin-svg-icons'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import viteCompression from 'vite-plugin-compression'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
@@ -23,7 +23,7 @@ export default ({ mode }: ConfigEnv): UserConfigExport => {
       vueI18n({
         include: path.resolve(__dirname, './src/lang/**'),
       }),
-      viteSvgIcons({
+      createSvgIconsPlugin({
         // Specify the icon folder to be cached
         iconDirs: [path.resolve(__dirname, './src/icons/svg')],
         // Specify symbolId format

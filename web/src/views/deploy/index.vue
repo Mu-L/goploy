@@ -15,12 +15,18 @@
         <el-option :label="'Env Asc'" value="envAsc" />
         <el-option :label="'Env Desc'" value="envDesc" />
       </el-select>
-      <el-select v-model="searchProject.pin" placeholder="Show pin" clearable>
+      <el-select
+        v-model="searchProject.pin"
+        style="width: 130px"
+        placeholder="Show pin"
+        clearable
+      >
         <el-option label="Pin" :value="true" />
         <el-option label="Unpin" :value="false" />
       </el-select>
       <el-select
         v-model="searchProject.environment"
+        style="width: 130px"
         placeholder="Environment"
         clearable
       >
@@ -53,13 +59,8 @@
       />
     </el-row>
     <el-row class="app-table">
-      <el-scrollbar style="width: 100%">
-        <el-row
-          v-infinite-scroll="load"
-          style="width: 100%"
-          :gutter="10"
-          :infinite-scroll-disabled="disabled"
-        >
+      <el-scrollbar style="width: 100%" @end-reached="load">
+        <el-row style="width: 100%" :gutter="10">
           <el-col
             v-for="(row, index) in tablePage.list"
             :key="index"
@@ -110,7 +111,7 @@
                         v-if="isLink(row.name)"
                         :href="row.name"
                         target="_blank"
-                        :underline="false"
+                        underline="never"
                         class="card-title__link"
                         style="color: inherit"
                       >
@@ -360,7 +361,7 @@
               <el-checkbox
                 v-for="(item, index) in publishFormProps.serverOption"
                 :key="index"
-                :label="item.serverId"
+                :value="item.serverId"
               >
                 {{ item.server.name + '(' + item.server.description + ')' }}
               </el-checkbox>
@@ -404,7 +405,7 @@ export default { name: 'DeployIndex' }
 </script>
 <script lang="ts" setup>
 import pms from '@/permission'
-import { Button, Dropdown, DropdownItem } from '@/components/Permission'
+import { Button, DropdownItem } from '@/components/Permission'
 import { Link, More, ArrowDown } from '@element-plus/icons-vue'
 import {
   DeployState,
@@ -423,6 +424,7 @@ import TheProcessManagerDialog from './TheProcessManagerDialog.vue'
 import TheFileCompareDialog from './TheFileCompareDialog.vue'
 import TheFileSyncDialog from './TheFileSyncDialog.vue'
 import { computed, watch, h, ref } from 'vue'
+import type { ScrollbarDirection } from 'element-plus'
 import { CommitData } from '@/api/repository'
 import { useStore } from 'vuex'
 import { useI18n } from 'vue-i18n'
@@ -440,9 +442,9 @@ const stickList = ref(getStick())
 const searchProject = ref({
   sort: getSort(),
   name: '',
-  environment: '',
+  environment: undefined,
   label: [] as string[],
-  pin: '',
+  pin: undefined,
 })
 const envTitleStyle = [
   {
@@ -465,10 +467,9 @@ const selectedItem = ref({} as ProjectData)
 const noMore = computed(
   () => tablePage.value.total === tablePage.value.list.length
 )
-const disabled = computed(() => noMore.value)
 const tableData = ref<any[]>([])
 const labelList = ref<string[]>([])
-const pagination = ref({ page: 0, rows: 24 })
+const pagination = ref({ page: 1, rows: 24 })
 
 const tempPublishFormProps = {
   disabled: false,
@@ -488,17 +489,17 @@ const publishFormProps = ref(tempPublishFormProps)
 
 const tablePage = computed(() => {
   let _tableData = tableData.value
-  if (searchProject.value.name !== '') {
+  if (searchProject.value.name) {
     _tableData = _tableData.filter(
       (item) => item.name.indexOf(searchProject.value.name) !== -1
     )
   }
-  if (searchProject.value.environment !== '') {
+  if (searchProject.value.environment) {
     _tableData = _tableData.filter(
       (item) => item.environment === Number(searchProject.value.environment)
     )
   }
-  if (searchProject.value.pin !== '') {
+  if (searchProject.value.pin) {
     _tableData = _tableData.filter(
       (item) => item.pin === searchProject.value.pin
     )
@@ -654,7 +655,10 @@ function sortChange(sort: string) {
   stickChange()
 }
 
-function load() {
+function load(direction: ScrollbarDirection) {
+  if (direction !== 'bottom' || noMore.value) {
+    return
+  }
   pagination.value.page++
 }
 

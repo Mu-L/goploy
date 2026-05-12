@@ -236,40 +236,12 @@ function enterCommand() {
 }
 
 .nav-plus {
-  .el-input__wrapper {
+  .el-select__wrapper {
     border-radius: 0px !important;
     box-shadow: none;
     background-color: #0e0f12 !important;
     border-color: #304156 !important;
-  }
-  .el-input__inner {
-    height: 43px !important;
-  }
-}
-
-.server-list {
-  height: 216px;
-  margin-top: 10px;
-}
-
-.server-filter {
-  .el-input {
-    &__wrapper {
-      background-color: #0e0f12 !important;
-    }
-    &__inner {
-      color: #f0f2f5 !important;
-    }
-  }
-}
-
-.server-item {
-  width: 100%;
-  text-align: left;
-  display: inline-block;
-  color: #cfd3dc !important;
-  &:hover {
-    color: var(--el-button-hover-text-color) !important;
+    height: 44px !important;
   }
 }
 </style>

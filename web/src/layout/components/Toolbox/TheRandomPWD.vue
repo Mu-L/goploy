@@ -1,10 +1,10 @@
 <template>
   <el-row v-show="modelValue === 'password'">
     <el-checkbox-group v-model="password.checkbox">
-      <el-checkbox :label="1">A-Z</el-checkbox>
-      <el-checkbox :label="2">a-z</el-checkbox>
-      <el-checkbox :label="3">0-9</el-checkbox>
-      <el-checkbox :label="4">!@#$%^&*</el-checkbox>
+      <el-checkbox :value="1">A-Z</el-checkbox>
+      <el-checkbox :value="2">a-z</el-checkbox>
+      <el-checkbox :value="3">0-9</el-checkbox>
+      <el-checkbox :value="4">!@#$%^&*</el-checkbox>
     </el-checkbox-group>
     <el-row style="margin-top: 10px" type="flex" align="middle">
       <span style="width: 60px; font-size: 14px; margin-right: 5px">
